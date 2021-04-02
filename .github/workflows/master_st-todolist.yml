@@ -22,8 +22,8 @@ jobs:
     - uses: azure/docker-login@v1
       with:
         login-server: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_ab837f021b094a238bd9b65a592c131c }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_59c2e4176837451abd7361d3a4044133 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_406bfaafac384b8f92228ea1590cc0dc }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_8bba4eff1e9040b5aa8c4e123d950464 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2.2.1
@@ -46,5 +46,5 @@ jobs:
       with:
         app-name: 'st-todolist'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d2e598e2bcdc4ef885c33dacc57ee994 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_ab837f021b094a238bd9b65a592c131c }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_711e2a11cf4e4fbebac841fc8b53b516 }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_406bfaafac384b8f92228ea1590cc0dc }}/appsvc/staticsite:${{ github.sha }}'
